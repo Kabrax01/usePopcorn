@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MovieDetails from "./MovieDetails";
+import { WelcomeMessage } from "./WelcomeMessage";
 import { Loader } from "./Loader";
 import { NavBar } from "./NavBar";
 import { ErrorMessage } from "./ErrorMessage";
@@ -49,6 +50,9 @@ export default function App() {
 
       <Main>
         <Box>
+          {!isLoading && movies.length === 0 && query === "" && (
+            <WelcomeMessage />
+          )}
           {isLoading && <Loader />}
           {!isLoading && !error && (
             <MovieList movies={movies} onSelectMovie={handleSelectMovie} />
