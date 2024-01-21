@@ -365,6 +365,10 @@ body {
 }
 
 @media screen and (max-width: 770px) {
+  body {
+    padding: 1rem;
+  }
+
   .search {
     width: 0;
     min-width: 25rem;
